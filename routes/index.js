@@ -3,22 +3,31 @@ const express = require('express');
 
 const router = express.Router();
 router.get('/',(req, res)=>{
-    let nome = req.query.nome;
-    if(nome){
-        res.send('ola, '+nome);
-    }else{
-        res.send('Ola Mundo!');
-    }
-    
+    let obj = {
+
+        nome: req.query.nome,
+        idade: req.query.idade,
+        mostrar:true,
+        ingredientes:[
+        ],
+        interesses:[
+            'php',
+            'node',
+            'js',
+            'css'
+        ]
+    };
+res.render('home', obj);
+
 });
 router.get('/posts', (req, res)=>{
-    let post = req.query.post;
-    if(post){
-        res.send(post);
-    }else{
-        res.send('nenhum post encontrado');
-    }
-}),
+    let obj = {
+        post:
+        [{titulo: 'Post01', conteudo: 'Este é um post sobre nada'},
+        {titulo: 'Post01', conteudo: 'Este é um segundo post sobre nada também'}]
+    };
+res.render('posts',obj);
+});
 
 router.get('/:id/post', (req, res)=>{
     let id = req.params.id;

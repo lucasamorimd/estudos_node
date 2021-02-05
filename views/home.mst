@@ -1,0 +1,18 @@
+{{>header}}
+{{#mostrar}}
+<p> Nome: {{nome}} - Idade {{idade}} anos</p>
+{{/mostrar}}
+<ul>
+{{#ingredientes}}
+<li>{{nome}} - {{qt}} </li>
+{{/ingredientes}}
+</ul>
+<hr/>
+<ul>
+{{#interesses}}
+<li>{{.}}</li>
+{{/interesses}}
+</ul>
+{{^ingredientes}}
+<p>não há ingredientes</p>
+{{/ingredientes}}

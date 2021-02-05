@@ -1,0 +1,10 @@
+{{>header}}
+<p> você está na página de posts </p>
+{{#post}}
+<ul>
+
+<li>{{titulo}}</li>
+<li>{{conteudo}}</li>
+
+</ul>
+{{/post}}
