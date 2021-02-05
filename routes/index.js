@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 router.get('/',(req, res)=>{
     let obj = {
-
+        title: 'Home',
         nome: req.query.nome,
         idade: req.query.idade,
         mostrar:true,
@@ -22,9 +22,10 @@ res.render('home', obj);
 });
 router.get('/posts', (req, res)=>{
     let obj = {
+        title:'Posts',
         post:
-        [{titulo: 'Post01', conteudo: 'Este é um post sobre nada'},
-        {titulo: 'Post01', conteudo: 'Este é um segundo post sobre nada também'}]
+        [{titulo: 'Post01', conteudo: 'Este é um post sobre nada', id:'1', comentario:'Muito legal'},
+        {titulo: 'Post02', conteudo: 'Este é um segundo post sobre nada também', id:'2', comentario:'Esse foi ruim'}]
     };
 res.render('posts',obj);
 });

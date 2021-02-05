@@ -3,7 +3,7 @@
 {{#post}}
 <ul>
 
-<li>{{titulo}}</li>
+<li><a href="{{id}}/post?coments={{comentario}}">{{titulo}}</a></li>
 <li>{{conteudo}}</li>
 
 </ul>

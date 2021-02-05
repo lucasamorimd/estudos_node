@@ -4,8 +4,15 @@ const router = require('./routes/index');
 
 const mustache = require('mustache-express');
 
+const helpers = require('./helpers');
 
 const app = express();
+
+app.use((req, res, next)=>{
+    res.locals.h = helpers;
+    next();
+})
+
 app.use('/', router);
 app.use('/posts', router);
 

@@ -1,4 +1,16 @@
+<html>
+<head>
+<title>{{title}} - {{h.titulopadrao}}</title>
+</head>
+<body>
 <h1>Cabeçalho </h1>
 <h1> Seja bem-vindo <h1>
+<hr/>
+<ul>
+{{#h.menu}}
+<li><a href="{{slug}}">{{page}}</a></li>
+{{/h.menu}}
+</ul>
+<hr/>
 <p> Qualquer coisa </p>
 <hr/>
