@@ -1,0 +1,4 @@
+{{>header}}
+
+<h1>Post Número: {{id}}</h1>
+<p>{{comentario}}</p>

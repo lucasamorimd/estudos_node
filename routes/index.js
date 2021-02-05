@@ -31,13 +31,13 @@ res.render('posts',obj);
 });
 
 router.get('/:id/post', (req, res)=>{
-    let id = req.params.id;
-    let coments = req.query.coments;
-    if(coments){
-        res.send('o post de id '+id+' tem este comentário: '+coments);
-    }else{
-        res.send('este post não tem comentários');
-    }
-})
+let obj = {
+    
+    id: req.params.id,
+    comentario: req.query.coments,
+    title: "Post "+req.params.id
+}
+    res.render('postId',obj);
+});
 
 module.exports = router;
