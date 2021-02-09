@@ -1,6 +1,6 @@
 {{>header}}
 {{#mostrar}}
-<p> Nome: {{nome}} - Idade {{idade}} anos</p>
+<p> Nome: {{userInfo.name}} - Id {{userInfo.id}}</p>
 {{/mostrar}}
 <ul>
 {{#ingredientes}}
