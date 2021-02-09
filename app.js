@@ -12,7 +12,7 @@ app.use((req, res, next)=>{
     res.locals.h = helpers;
     next();
 })
-
+app.use(express.json());
 app.use('/', router);
 app.use('/posts', router);
 

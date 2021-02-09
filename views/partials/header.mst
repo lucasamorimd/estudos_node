@@ -3,8 +3,9 @@
 <title>{{title}} - {{h.titulopadrao}}</title>
 </head>
 <body>
+<header>
 <h1>Cabeçalho </h1>
-<h1> Seja bem-vindo <h1>
+<h2> Seja bem-vindo {{userInfo.name}} <h2>
 <hr/>
 <ul>
 {{#h.menu}}
@@ -12,3 +13,4 @@
 {{/h.menu}}
 </ul>
 <hr/>
+</header>
