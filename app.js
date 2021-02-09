@@ -8,6 +8,8 @@ const helpers = require('./helpers');
 
 const app = express();
 
+const errorhandler = require('./handlers/errorHandler');
+
 app.use((req, res, next)=>{
     res.locals.h = helpers;
     next();
@@ -15,6 +17,7 @@ app.use((req, res, next)=>{
 app.use(express.json());
 app.use('/', router);
 app.use('/posts', router);
+app.use(errorhandler.notfound);
 
 app.engine('mst', mustache(__dirname+'/views/partials', '.mst'));
 app.set('view engine', 'mst');
