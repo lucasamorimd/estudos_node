@@ -6,9 +6,11 @@ const userController = require('../controllers/usersController');
 
 
 const router = express.Router();
-router.get('/', homeController.userMiddleware, homeController.index);
-router.get('/posts', homeController.userMiddleware, postsController.posts );
-router.get('/:id/post', homeController.userMiddleware, postsController.postId);
-router.get('/users/login', homeController.userMiddleware, userController.login);
+router.get('/', homeController.index);
+router.get('/posts', postsController.posts );
+router.get('/:id/post', postsController.postId);
+router.get('/users/login', userController.login);
+router.get('/posts/add', postsController.addPost);
+router.post('/posts/add', postsController.addAction);
 
 module.exports = router;

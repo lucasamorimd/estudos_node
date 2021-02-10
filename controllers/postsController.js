@@ -16,4 +16,16 @@ exports.postId = (req, res)=>{
         title: "Post "+req.params.id
     }
         res.render('postId',obj);
-    }
+    };
+const mongoose = require('mongoose');
+const post = mongoose.model('Post');
+exports.addPost = (req, res)=>{
+    res.render('addPost');
+
+};
+exports.addAction = async(req, res)=>{
+    const Post = new post(req.body);
+    await Post.save();
+    res.redirect('/');
+    
+}
